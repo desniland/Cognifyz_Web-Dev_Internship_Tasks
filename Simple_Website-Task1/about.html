@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .section {
+            padding: 2rem;
+            margin: 1rem auto;
+            max-width: 1200px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .top-header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .col {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .about-info p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .about-btn .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .about-btn .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .skills-box {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skills-list span {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .project-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .project-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-box video {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .project-box h3 {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            color: #333;
+        }
+
+        .project-box p {
+            font-size: 0.9rem;
+            padding: 0 1rem 1rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="top-header">
+            <h1>About Me</h1>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="about-info">
+                    <h3>My Introduction</h3>
+                    <p>I am a highly motivated Software Engineer with a strong foundation in C programming, proven ability in debugging, testing, and troubleshooting. I am seeking a challenging role where I can leverage my skills to design, develop, and deliver high-quality, reliable, and scalable software solutions. Experience with Microsoft Azure cloud technologies (Resource Manager, RBAC, Entra ID) further enhances my ability to build robust and secure applications.</p>
+                    <div class="about-btn">
+                        <a href="cv/Desmond-Mariwa_SDE-CV.pdf" download>
+                            <button class="btn">Download CV <i class="uil uil-import"></i></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>Python</span>
+                        <span>Node.js</span>
+                    </div>
+                </div>
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Other Skills</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>Data Structures & Algorithms</span>
+                        <span>Networking</span>
+                        <span>Testing & Debugging</span>
+                        <span>Team Player</span>
+                        <span>Concise Communicator</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="top-header">
+            <h1>Projects</h1>
+        </div>
+        <div class="project-container">
+            <div class="project-box">
+                <a href="https://github.com/desniland/E-Commerce_Website_Portfolio_Project" target="_blank">
+                    <video controls poster="images/BillyStore.png">
+                        <source src="videos/E-Commerce_Website.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+                <h3>AirBnB Clone</h3>
+                <p>This is a complete full-stack web application, integrating a MySQL database and Flask RESTful API with a dynamic HTML5/CSS3/jQuery front-end.</p>
+            </div>
+            <div class="project-box">
+                <a href="https://github.com/desniland/AirBnB_clone_v4" target="_blank">
+                    <video controls poster="images/hbnb_clone.jpg">
+                        <source src="videos/Airbnb_App_Clone.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+                <h3>Mpesa Integrated E-commerce Website</h3>
+                <p>This is an ecommerce system that has an HTML, CSS, JavaScript, and SCSS frontend, and a Django backend. The ecommerce system is integrated with Mpesa, allowing users to purchase products.</p>
+            </div>
+            <div class="project-box">
+                <a href="https://github.com/desniland/MpesaDjangoEcommerceWebsite" target="_blank">
+                    <video controls poster="images/mpesa_e-commerce.png">
+                        <source src="videos/Ecommerce_Website_Preview.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+                <h3>E-Commerce</h3>
+                <p>An elegant ecommerce system that has an HTML, CSS, JavaScript, and SCSS frontend, and a Django backend. The ecommerce system is integrated with Mpesa, allowing users to purchase products.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
