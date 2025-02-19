@@ -1,0 +1,396 @@
+/** @jsxImportSource https://esm.sh/react@18.2.0 */
+import React, { useState } from "https://esm.sh/react@18.2.0";
+import { createRoot } from "https://esm.sh/react-dom@18.2.0/client";
+
+function InternshipLanding() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // In a real-world scenario, you'd send this data to a backend
+    alert(`Application submitted!\nName: ${formData.name}\nEmail: ${formData.email}`);
+  };
+
+  return (
+    <div className="internship-container">
+      <section className="hero">
+        <div className="hero-content">
+          <h1>Web Developer Internship Opportunities at Cognifyz Technologies</h1>
+          <p className="subheadline">Transform Your Coding Skills into Real-World Innovation</p>
+        </div>
+      </section>
+
+      <section className="introduction">
+        <div className="section-content">
+          <h2>About the Internship</h2>
+          <p>
+            Cognifyz Technologies offers an immersive 6-month web development internship designed to transform passionate learners into industry-ready professionals. 
+            Drawing inspiration from our journey of creating responsive web applications, interactive galleries, and dynamic user experiences, 
+            this program provides hands-on experience in modern web development.
+          </p>
+        </div>
+      </section>
+
+      <section className="highlights">
+        <div className="section-content">
+          <h2>Internship Highlights</h2>
+          <div className="highlight-grid">
+            <div className="highlight-item">
+              <i className="icon">🚀</i>
+              <h3>Real-World Projects</h3>
+              <p>Work on cutting-edge web applications and contribute to live projects</p>
+            </div>
+            <div className="highlight-item">
+              <i className="icon">👩‍🏫</i>
+              <h3>Mentorship Program</h3>
+              <p>Direct guidance from senior developers and industry experts</p>
+            </div>
+            <div className="highlight-item">
+              <i className="icon">💻</i>
+              <h3>Technology Exposure</h3>
+              <p>Learn latest frameworks like React, modern CSS, and responsive design</p>
+            </div>
+            <div className="highlight-item">
+              <i className="icon">🌐</i>
+              <h3>Remote Flexibility</h3>
+              <p>Hybrid work model with option for remote and in-office collaboration</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="qualifications">
+        <div className="section-content">
+          <h2>What We're Looking For</h2>
+          <ul>
+            <li>Basic understanding of HTML, CSS, and JavaScript</li>
+            <li>Familiarity with React or other modern JavaScript frameworks</li>
+            <li>Passion for creating responsive and interactive web experiences</li>
+            <li>Strong problem-solving and communication skills</li>
+            <li>Currently enrolled in Computer Science or related field</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="application">
+        <div className="section-content">
+          <h2>Ready to Launch Your Career?</h2>
+          <form onSubmit={handleSubmit} className="application-form">
+            <input 
+              type="text" 
+              name="name" 
+              placeholder="Full Name" 
+              value={formData.name}
+              onChange={handleInputChange}
+              required 
+            />
+            <input 
+              type="email" 
+              name="email" 
+              placeholder="Email Address" 
+              value={formData.email}
+              onChange={handleInputChange}
+              required 
+            />
+            <input 
+              type="tel" 
+              name="phone" 
+              placeholder="Phone Number" 
+              value={formData.phone}
+              onChange={handleInputChange}
+            />
+            <button type="submit" className="cta-button">Apply Now</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <div className="responsive-container">
+      <header className="site-header">
+        <div className="header-content">
+          <h1>Cognifyz Technologies</h1>
+          <button 
+            className="hamburger-menu" 
+            onClick={toggleMenu}
+            aria-label="Toggle Navigation"
+          >
+            <span className="hamburger-icon"></span>
+          </button>
+          <nav className={`main-nav ${isMenuOpen ? 'menu-open' : ''}`}>
+            <a href="#about" onClick={toggleMenu}>About</a>
+            <a href="#internship" onClick={toggleMenu}>Internship</a>
+            <a href="#apply" onClick={toggleMenu}>Apply</a>
+          </nav>
+        </div>
+      </header>
+      
+      <main>
+        <InternshipLanding />
+      </main>
+      
+      <footer className="site-footer">
+        <div className="footer-content">
+          <div className="contact-info">
+            <h4>Contact Us</h4>
+            <p>📧 Email: albertdesmond26@gmail.com</p>
+            <p>📞 Phone: +254748522996</p>
+          </div>
+          <div className="footer-links">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+          </div>
+          <p className="copyright">© 2023 Cognifyz Technologies. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+function client() {
+  createRoot(document.getElementById("root")).render(<App />);
+}
+if (typeof document !== "undefined") { client(); }
+
+export default async function server(request: Request): Promise<Response> {
+  return new Response(`
+    <html>
+      <head>
+        <title>Cognifyz Technologies - Web Developer Internship</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://esm.town/v/std/catch"></script>
+        <style>
+          :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+            --white: #ffffff;
+          }
+
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+          }
+
+          .responsive-container {
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+
+          /* Header Styles */
+          .site-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+          }
+
+          .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .main-nav {
+            display: flex;
+            gap: 1rem;
+          }
+
+          .main-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+          }
+
+          .main-nav a:hover {
+            background-color: var(--secondary-color);
+          }
+
+          /* Internship Landing Styles */
+          .internship-container {
+            padding: 2rem;
+          }
+
+          .hero {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+          }
+
+          .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+          }
+
+          .subheadline {
+            font-size: 1.2rem;
+            opacity: 0.8;
+          }
+
+          .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+          }
+
+          .section-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+          }
+
+          .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+          }
+
+          .highlight-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+          }
+
+          .highlight-item .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+          }
+
+          .qualifications ul {
+            list-style-type: none;
+            text-align: center;
+            margin-top: 1rem;
+          }
+
+          .qualifications li {
+            background-color: white;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          }
+
+          .application-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+          }
+
+          .application-form input {
+            padding: 0.75rem;
+            border: 1px solid var(--secondary-color);
+            border-radius: 4px;
+          }
+
+          .cta-button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+          }
+
+          .cta-button:hover {
+            background-color: var(--primary-color);
+          }
+
+          /* Footer Styles */
+          .site-footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+          }
+
+          .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+          }
+
+          .contact-info {
+            margin-bottom: 1rem;
+          }
+
+          .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+          }
+
+          .footer-links a {
+            color: white;
+            text-decoration: none;
+          }
+
+          /* Responsive Breakpoints */
+          @media screen and (max-width: 1024px) {
+            .highlight-grid {
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+
+          @media screen and (max-width: 768px) {
+            .hero h1 {
+              font-size: 2rem;
+            }
+
+            .highlight-grid {
+              grid-template-columns: 1fr;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <div id="root"></div>
+        <script type="module" src="${import.meta.url}"></script>
+      </body>
+    </html>
+  `, {
+    headers: {
+      "content-type": "text/html",
+    },
+  });
+}
