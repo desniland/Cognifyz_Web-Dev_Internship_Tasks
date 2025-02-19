@@ -1,0 +1,107 @@
+/** @jsxImportSource https://esm.sh/react@18.2.0 */
+import React from "https://esm.sh/react@18.2.0";
+import { createRoot } from "https://esm.sh/react-dom@18.2.0/client";
+
+function App() {
+  return (
+    <div className="container">
+      <div className="columns is-multiline">
+        <div className="column is-4-desktop is-6-tablet is-12-mobile">
+          <div className="card">
+            <div className="card-image">
+              <figure className="image is-4by3">
+                <img 
+                  src="https://maxm-imggenurl.web.val.run/landscape-mountain-lake" 
+                  alt="Scenic Mountain Lake" 
+                />
+              </figure>
+            </div>
+            <div className="card-content">
+              <div className="media">
+                <div className="media-content">
+                  <p className="title is-4">Mountain Retreat</p>
+                  <p className="subtitle is-6">Tranquil Wilderness</p>
+                </div>
+              </div>
+              <div className="content">
+                Discover the serene beauty of alpine landscapes, where crystal-clear lakes reflect majestic mountain peaks.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="column is-4-desktop is-6-tablet is-12-mobile">
+          <div className="card">
+            <div className="card-image">
+              <figure className="image is-4by3">
+                <img 
+                  src="https://maxm-imggenurl.web.val.run/forest-misty-morning" 
+                  alt="Misty Forest Morning" 
+                />
+              </figure>
+            </div>
+            <div className="card-content">
+              <div className="media">
+                <div className="media-content">
+                  <p className="title is-4">Forest Meditation</p>
+                  <p className="subtitle is-6">Peaceful Woodland</p>
+                </div>
+              </div>
+              <div className="content">
+                Immerse yourself in the quiet magic of a misty forest, where ancient trees whisper stories of tranquility.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="column is-4-desktop is-6-tablet is-12-mobile">
+          <div className="card">
+            <div className="card-image">
+              <figure className="image is-4by3">
+                <img 
+                  src="https://maxm-imggenurl.web.val.run/coastal-sunset" 
+                  alt="Coastal Sunset" 
+                />
+              </figure>
+            </div>
+            <div className="card-content">
+              <div className="media">
+                <div className="media-content">
+                  <p className="title is-4">Coastal Horizons</p>
+                  <p className="subtitle is-6">Golden Hour</p>
+                </div>
+              </div>
+              <div className="content">
+                Experience the breathtaking moment when the sun meets the ocean, painting the sky in warm, vibrant hues.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function client() {
+  createRoot(document.getElementById("root")).render(<App />);
+}
+if (typeof document !== "undefined") { client(); }
+
+export default async function server(request: Request): Promise<Response> {
+  return new Response(`
+    <html>
+      <head>
+        <title>Responsive Cards</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://esm.town/v/std/catch"></script>
+      </head>
+      <body>
+        <div id="root"></div>
+        <script type="module" src="${import.meta.url}"></script>
+      </body>
+    </html>
+  `, {
+    headers: {
+      "content-type": "text/html",
+    },
+  });
+}
