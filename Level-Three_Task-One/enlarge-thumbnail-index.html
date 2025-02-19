@@ -1,0 +1,300 @@
+/** @jsxImportSource https://esm.sh/react@18.2.0 */
+import React, { useState } from "https://esm.sh/react@18.2.0";
+import { createRoot } from "https://esm.sh/react-dom@18.2.0/client";
+
+function ImageGallery() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const images = [
+    {
+      thumbnail: "https://maxm-imggenurl.web.val.run/landscape-mountain-lake",
+      full: "https://maxm-imggenurl.web.val.run/landscape-mountain-lake",
+      alt: "Mountain Lake Landscape",
+      title: "Alpine Serenity"
+    },
+    {
+      thumbnail: "https://maxm-imggenurl.web.val.run/forest-misty-morning",
+      full: "https://maxm-imggenurl.web.val.run/forest-misty-morning",
+      alt: "Misty Forest Morning",
+      title: "Woodland Whispers"
+    },
+    {
+      thumbnail: "https://maxm-imggenurl.web.val.run/coastal-sunset",
+      full: "https://maxm-imggenurl.web.val.run/coastal-sunset",
+      alt: "Coastal Sunset",
+      title: "Golden Horizon"
+    },
+    {
+      thumbnail: "https://maxm-imggenurl.web.val.run/mountain-peak",
+      full: "https://maxm-imggenurl.web.val.run/mountain-peak",
+      alt: "Majestic Mountain Peak",
+      title: "Summit Dreams"
+    },
+    {
+      thumbnail: "https://maxm-imggenurl.web.val.run/ocean-waves",
+      full: "https://maxm-imggenurl.web.val.run/ocean-waves",
+      alt: "Crashing Ocean Waves",
+      title: "Oceanic Power"
+    },
+    {
+      thumbnail: "https://maxm-imggenurl.web.val.run/desert-landscape",
+      full: "https://maxm-imggenurl.web.val.run/desert-landscape",
+      alt: "Desert Landscape",
+      title: "Arid Expanse"
+    }
+  ];
+
+  const openLightbox = (image) => {
+    setSelectedImage(image);
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+  };
+
+  return (
+    <div className="gallery-container">
+      <div className="image-gallery">
+        {images.map((image, index) => (
+          <div key={index} className="gallery-item" onClick={() => openLightbox(image)}>
+            <img 
+              src={image.thumbnail} 
+              alt={image.alt} 
+              className="gallery-thumbnail"
+            />
+            <div className="image-overlay">
+              <span>{image.title}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {selectedImage && (
+        <div className="lightbox" onClick={closeLightbox}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={closeLightbox}>×</button>
+            <img 
+              src={selectedImage.full} 
+              alt={selectedImage.alt} 
+              className="lightbox-image"
+            />
+            <p className="lightbox-title">{selectedImage.title}</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <div className="responsive-container">
+      <header className="site-header">
+        <div className="header-content">
+          <h1>Nature's Canvas</h1>
+          <button 
+            className="hamburger-menu" 
+            onClick={toggleMenu}
+            aria-label="Toggle Navigation"
+          >
+            <span className="hamburger-icon"></span>
+          </button>
+          <nav className={`main-nav ${isMenuOpen ? 'menu-open' : ''}`}>
+            <a href="#mountain" onClick={toggleMenu}>Mountains</a>
+            <a href="#forest" onClick={toggleMenu}>Forests</a>
+            <a href="#coast" onClick={toggleMenu}>Coastlines</a>
+          </nav>
+        </div>
+      </header>
+      
+      <main>
+        <ImageGallery />
+      </main>
+      
+      <footer className="site-footer">
+        <p>© 2023 Nature's Canvas. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}
+
+function client() {
+  createRoot(document.getElementById("root")).render(<App />);
+}
+if (typeof document !== "undefined") { client(); }
+
+export default async function server(request: Request): Promise<Response> {
+  return new Response(`
+    <html>
+      <head>
+        <title>Image Gallery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://esm.town/v/std/catch"></script>
+        <style>
+          :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+            --overlay-color: rgba(0,0,0,0.7);
+          }
+
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+          }
+
+          /* Previous header and navigation styles remain unchanged */
+          
+          /* Image Gallery Styles */
+          .gallery-container {
+            padding: 2rem 0;
+          }
+
+          .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+
+          .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+          }
+
+          .gallery-item:hover {
+            transform: scale(1.05);
+          }
+
+          .gallery-thumbnail {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+          }
+
+          .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--overlay-color);
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+          }
+
+          .gallery-item:hover .image-overlay {
+            opacity: 1;
+          }
+
+          /* Lightbox Styles */
+          .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--overlay-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 2rem;
+          }
+
+          .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+          }
+
+          .lightbox-image {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+          }
+
+          .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+          }
+
+          .lightbox-title {
+            text-align: center;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+          }
+
+          /* Responsive Breakpoints */
+          @media screen and (max-width: 1024px) {
+            .image-gallery {
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+
+          @media screen and (max-width: 768px) {
+            .image-gallery {
+              grid-template-columns: 1fr;
+            }
+
+            .gallery-thumbnail {
+              height: 200px;
+            }
+          }
+
+          /* Previous footer and other styles remain unchanged */
+        </style>
+      </head>
+      <body>
+        <div id="root"></div>
+        <script type="module" src="${import.meta.url}"></script>
+      </body>
+    </html>
+  `, {
+    headers: {
+      "content-type": "text/html",
+    },
+  });
+}
