@@ -1,7 +1,12 @@
-/** @jsxImportSource https://esm.sh/react@18.2.0 */
+/*
+* @jsxImportSource https://esm.sh/react@18.2.0 
+*/
+// Import React along with the useState hook from the specified URL
 import React, { useState } from "https://esm.sh/react@18.2.0";
+// Import createRoot from ReactDOM for mounting the React application into the DOM
 import { createRoot } from "https://esm.sh/react-dom@18.2.0/client";
 
+// Define the ImageGallery component which displays a collection of images
 function ImageGallery() {
   const [selectedImage, setSelectedImage] = useState(null);
 
