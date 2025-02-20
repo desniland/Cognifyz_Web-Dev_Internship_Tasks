@@ -1,11 +1,24 @@
+/**
+ * This is a React-based web application that dynamically renders a set of responsive cards
+ * using Bulma for styling. The app is designed to display three different scenic images 
+ * with corresponding titles and descriptions.
+ * 
+ * The project utilizes React 18 and ReactDOM for rendering the components.
+ */
+
 /** @jsxImportSource https://esm.sh/react@18.2.0 */
 import React from "https://esm.sh/react@18.2.0";
 import { createRoot } from "https://esm.sh/react-dom@18.2.0/client";
 
+/**
+ * The main application component that renders a responsive grid layout 
+ * containing multiple cards with images and descriptions.
+ */
 function App() {
   return (
     <div className="container">
       <div className="columns is-multiline">
+        {/* Card 1: Mountain Retreat */}
         <div className="column is-4-desktop is-6-tablet is-12-mobile">
           <div className="card">
             <div className="card-image">
@@ -29,6 +42,8 @@ function App() {
             </div>
           </div>
         </div>
+        
+        {/* Card 2: Forest Meditation */}
         <div className="column is-4-desktop is-6-tablet is-12-mobile">
           <div className="card">
             <div className="card-image">
@@ -52,6 +67,8 @@ function App() {
             </div>
           </div>
         </div>
+        
+        {/* Card 3: Coastal Horizons */}
         <div className="column is-4-desktop is-6-tablet is-12-mobile">
           <div className="card">
             <div className="card-image">
@@ -80,11 +97,18 @@ function App() {
   );
 }
 
+/**
+ * Initializes the React application by rendering the App component inside the root element.
+ */
 function client() {
   createRoot(document.getElementById("root")).render(<App />);
 }
 if (typeof document !== "undefined") { client(); }
 
+/**
+ * Handles server-side rendering by generating a basic HTML response 
+ * that includes the necessary styles and scripts to initialize the React app.
+ */
 export default async function server(request: Request): Promise<Response> {
   return new Response(`
     <html>
