@@ -19,19 +19,19 @@ This repository contains various tasks for the Cognifyz Web Development Internsh
 
 1. Build a basic calculator that adds two numbers together and displays the result using JavaScript.
 
-#### [Level-One_Task-Two](https://github.com/desniland/Cognifyz_Web-Dev_Internship_Tasks/tree/09d545a45152d29a6b223ada2cede99669c7639b/Level-Two_Task-One)
+### [Level-One_Task-Two](https://github.com/desniland/Cognifyz_Web-Dev_Internship_Tasks/tree/09d545a45152d29a6b223ada2cede99669c7639b/Level-Two_Task-One)
 1. Use a front-end framework like Bulma or UIKit to create a responsive card component with an image and text.
 2. Implement a basic responsive grid layout using a front-end framework like Bootstrap or Foundation.
 
-#### [Leve-Two_Task-Two](https://github.com/desniland/Cognifyz_Web-Dev_Internship_Tasks/tree/c2c1038c898d51adb3871dac0a62ee45b5e59728/Level-Two_Task-Two)
+### [Leve-Two_Task-Two](https://github.com/desniland/Cognifyz_Web-Dev_Internship_Tasks/tree/c2c1038c898d51adb3871dac0a62ee45b5e59728/Level-Two_Task-Two)
 1. Convert a basic webpage into a responsive design that adapts to different screen sizes using CSS media queries.
 2. Create a mobile-friendly navigation menu that collapses into a hamburger menu on smaller screens using HTML and CSS.
 
-#### [Level-Three_Task-One](https://github.com/desniland/Cognifyz_Web-Dev_Internship_Tasks/tree/dc91414c45190983c17453c5723269264f5f22c5/Level-Three_Task-One)
+### [Level-Three_Task-One](https://github.com/desniland/Cognifyz_Web-Dev_Internship_Tasks/tree/dc91414c45190983c17453c5723269264f5f22c5/Level-Three_Task-One)
 1. Use CSS to create a basic image gallery with thumbnail images that enlarge when clicked.
 2. Implement a simple image slideshow that automatically transitions between images using HTML and CSS.
 
-#### [Level-Three_Task-Two](https://github.com/desniland/Cognifyz_Web-Dev_Internship_Tasks/tree/e84d153d29d1388c3e890d02322493c991ad47d7/Level-Three_Task-Two)
+### [Level-Three_Task-Two](https://github.com/desniland/Cognifyz_Web-Dev_Internship_Tasks/tree/e84d153d29d1388c3e890d02322493c991ad47d7/Level-Three_Task-Two)
 1. Create a landing page for a web developer internship with the following key elements:
     - Clear headline: "Web Developer Internship Opportunities at Cognifyz Technologies"
     - Brief introduction: Overview of the internship program and duration.
