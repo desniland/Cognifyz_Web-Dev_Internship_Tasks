@@ -1,6 +1,6 @@
 # Cognifyz Web Development Internship Tasks
 
-![alt text](https://github.com/desniland/Cognifyz_Web-Dev_Internship_Tasks/blob/images/cognifyz.jpeg?raw=true)
+![alt text](https://github.com/desniland/Cognifyz_Web-Dev_Internship_Tasks/blob/4a32b78ec5e79dbe4a252eeecd1052f4de6e01e5/images/cognifyz.jpeg?raw=true)
 ## Overview
 This repository contains various tasks for the Cognifyz Web Development Internship. The tasks are designed to help interns develop their skills in HTML, CSS, JavaScript, and front-end frameworks.
 
