@@ -1,19 +1,30 @@
-/** @jsxImportSource https://esm.sh/react@18.2.0 */
-import React from "https://esm.sh/react@18.2.0";
-import { createRoot } from "https://esm.sh/react-dom@18.2.0/client";
+/** 
+ * @jsxImportSource https://esm.sh/react@18.2.0 
+ * This line specifies the source for the React library using ES modules.
+ */
+import React from "https://esm.sh/react@18.2.0"; // Import React from the specified URL
+import { createRoot } from "https://esm.sh/react-dom@18.2.0/client"; // Import createRoot from React DOM for rendering
 
+// Define the main App component
 function App() {
   return (
     <div className="container-fluid py-4">
+      {/* Bootstrap container with padding */}
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {/* Responsive grid layout with gaps between columns */}
+        
+        {/* First Card: Mountain Retreat */}
         <div className="col">
           <div className="card h-100 shadow-sm">
+            {/* Card with shadow and full height */}
             <img 
               src="https://maxm-imggenurl.web.val.run/landscape-mountain-lake" 
               className="card-img-top" 
               alt="Scenic Mountain Lake" 
             />
+            {/* Card image */}
             <div className="card-body">
+              {/* Card body with content */}
               <h5 className="card-title">Mountain Retreat</h5>
               <h6 className="card-subtitle mb-2 text-muted">Tranquil Wilderness</h6>
               <p className="card-text">
@@ -21,10 +32,14 @@ function App() {
               </p>
             </div>
             <div className="card-footer bg-transparent">
+              {/* Card footer with a transparent background */}
               <a href="#" className="btn btn-outline-primary">Explore</a>
+              {/* Button to explore the card */}
             </div>
           </div>
         </div>
+
+        {/* Second Card: Forest Meditation */}
         <div className="col">
           <div className="card h-100 shadow-sm">
             <img 
@@ -44,6 +59,8 @@ function App() {
             </div>
           </div>
         </div>
+
+        {/* Third Card: Coastal Horizons */}
         <div className="col">
           <div className="card h-100 shadow-sm">
             <img 
@@ -68,29 +85,42 @@ function App() {
   );
 }
 
+// Function to render the React app on the client side
 function client() {
+  // Create a root for rendering the App component into the DOM
   createRoot(document.getElementById("root")).render(<App />);
 }
-if (typeof document !== "undefined") { client(); }
 
+// Check if the code is running in a browser environment
+if (typeof document !== "undefined") { 
+  client(); // Render the app if the document object exists
+}
+
+// Server-side function to generate an HTML response
 export default async function server(request: Request): Promise<Response> {
   return new Response(`
     <html>
       <head>
         <title>Responsive Bootstrap Grid</title>
+        <!-- Link to Bootstrap CSS for styling -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Meta tag for responsive design -->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Script for error handling -->
         <script src="https://esm.town/v/std/catch"></script>
       </head>
       <body>
+        <!-- Root element for React app -->
         <div id="root"></div>
+        <!-- Script to load the React app -->
         <script type="module" src="${import.meta.url}"></script>
+        <!-- Bootstrap JS bundle for interactive components -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
       </body>
     </html>
   `, {
     headers: {
-      "content-type": "text/html",
+      "content-type": "text/html", // Set the response content type to HTML
     },
   });
 }
