@@ -6,7 +6,7 @@ This repository contains various tasks for the Cognifyz Web Development Internsh
 
 ## Tasks
 
-### HTML/CSS
+### [Level-One_Task-One](https://github.com/desniland/Cognifyz_Web-Dev_Internship_Tasks/tree/eb1ee1ed50cc192c0230d77e7f079dd2f977ca5e/Level-One_Task-One/Simple_Website-Task1) 
 1. Create a simple webpage with a heading, paragraph, and image using HTML and CSS.
 2. Build a basic form with a single input field and a submit button using HTML and CSS.
 3. Design and code a simple navigation menu with three links using HTML and CSS.
