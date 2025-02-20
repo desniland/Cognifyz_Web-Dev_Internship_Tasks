@@ -1,6 +1,5 @@
-Here is the README.md content for the Cognifyz_Web-Dev_Internship_Tasks repository:
-
 # Cognifyz Web Development Internship Tasks
+
 
 ## Overview
 This repository contains various tasks for the Cognifyz Web Development Internship. The tasks are designed to help interns develop their skills in HTML, CSS, JavaScript, and front-end frameworks.
